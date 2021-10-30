@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FoodShop.Application\FoodShop.Application.csproj" />
+    <ProjectReference Include="..\FoodShop.Data\FoodShop.Data.csproj" />
+    <ProjectReference Include="..\FoodShop.Utilities\FoodShop.Utilities.csproj" />
+    <ProjectReference Include="..\FoodShop.ViewModels\FoodShop.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>
