@@ -28,6 +28,7 @@ namespace FoodShop.Application.Catalog.Products
             var data = await query.Select(x => new ProductViewModel()
             {
                 Id = x.p.Id,
+                Name = x.p.Name,
                 DateCreated = x.p.DateCreated,
                 OriginalPrice = x.p.OriginalPrice,
                 Price = x.p.Price,
