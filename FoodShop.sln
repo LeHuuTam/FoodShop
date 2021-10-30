@@ -11,8 +11,15 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodShop.Data", "FoodShop.Data\FoodShop.Data.csproj", "{B1790693-2220-4EC3-A0D4-948A1D1F76D6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodShop.Application", "FoodShop.Application\FoodShop.Application.csproj", "{F05C13B3-0D8E-4732-A3DC-92ADBBF1ED41}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B1790693-2220-4EC3-A0D4-948A1D1F76D6} = {B1790693-2220-4EC3-A0D4-948A1D1F76D6}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodShop.WebApp", "FoodShop.WebApp\FoodShop.WebApp.csproj", "{5121D047-4FFD-43DE-B26F-2CE5A67693A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodShop.WebApp", "FoodShop.WebApp\FoodShop.WebApp.csproj", "{5121D047-4FFD-43DE-B26F-2CE5A67693A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodShop.ViewModels", "FoodShop.ViewModels\FoodShop.ViewModels.csproj", "{2F24F847-4E63-4341-A988-5525F7E1AC5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodShop.Utilities", "FoodShop.Utilities\FoodShop.Utilities.csproj", "{F7A27635-C013-49C5-BCB8-8BCF549A424A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +39,14 @@ Global
 		{5121D047-4FFD-43DE-B26F-2CE5A67693A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5121D047-4FFD-43DE-B26F-2CE5A67693A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5121D047-4FFD-43DE-B26F-2CE5A67693A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F24F847-4E63-4341-A988-5525F7E1AC5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F24F847-4E63-4341-A988-5525F7E1AC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F24F847-4E63-4341-A988-5525F7E1AC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F24F847-4E63-4341-A988-5525F7E1AC5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7A27635-C013-49C5-BCB8-8BCF549A424A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7A27635-C013-49C5-BCB8-8BCF549A424A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7A27635-C013-49C5-BCB8-8BCF549A424A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7A27635-C013-49C5-BCB8-8BCF549A424A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
