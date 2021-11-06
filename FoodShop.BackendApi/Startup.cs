@@ -1,4 +1,5 @@
 using FoodShop.Application.Catalog.Products;
+using FoodShop.Application.Common;
 using FoodShop.Data.EF;
 using FoodShop.Utilities.Constants;
 using Microsoft.AspNetCore.Builder;
@@ -31,7 +32,10 @@ namespace FoodShop.BackendApi
             services.AddDbContext<FoodShopDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString(SystemConstants.MainConnectionString)));
             //declare DI
+
+            services.AddTransient<IStorageService, FileStorageService>();
             services.AddTransient<IPublicProductService, PublicProductService>();
+            services.AddTransient<IManageProductService, ManageProductService>();
             services.AddControllersWithViews();
 
             services.AddSwaggerGen(c =>
