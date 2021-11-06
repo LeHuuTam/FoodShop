@@ -15,4 +15,8 @@
     <ProjectReference Include="..\FoodShop.ViewModels\FoodShop.ViewModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\user-content\" />
+  </ItemGroup>
+
 </Project>

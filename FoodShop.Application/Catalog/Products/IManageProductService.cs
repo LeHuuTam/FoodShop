@@ -16,6 +16,8 @@ namespace FoodShop.Application.Catalog.Products
 
         Task<int> Delete(int productId);
 
+        Task<ProductViewModel> GetById(int productId);
+
         Task<bool> UpdatePrice(int productId, decimal newPrice);
 
         Task<bool> UpdateStock(int productId, int addedQuantity);

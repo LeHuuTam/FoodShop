@@ -122,6 +122,25 @@ namespace FoodShop.Application.Catalog.Products
             return pagedResult;
         }
 
+        public async Task<ProductViewModel> GetById(int productId)
+        {
+            var product = await _context.Products.FindAsync(productId);
+
+
+            var productViewModel = new ProductViewModel()
+            {
+                Id = product.Id,
+                DateCreated = product.DateCreated,
+                Description = product.Description,
+                Name = product.Name,
+                OriginalPrice = product.OriginalPrice,
+                Price = product.Price,
+                Stock = product.Stock,
+                ViewCount = product.ViewCount
+            };
+            return productViewModel;
+        }
+
         public Task<List<ProductImageViewModel>> GetListImage(int productId)
         {
             throw new NotImplementedException();
