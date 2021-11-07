@@ -1,9 +1,11 @@
+using FluentValidation.AspNetCore;
 using FoodShop.Application.Catalog.Products;
 using FoodShop.Application.Common;
 using FoodShop.Application.System.Users;
 using FoodShop.Data.EF;
 using FoodShop.Data.Entities;
 using FoodShop.Utilities.Constants;
+using FoodShop.ViewModels.System.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,7 +51,11 @@ namespace FoodShop.BackendApi
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
             services.AddTransient<IUserService, UserService>();
 
-            services.AddControllers();
+            //services.AddTransient<IValidator<LoginRequest>, LoginRequestValidator>();
+            //services.AddTransient<IValidator<RegisterRequest>, RegisterRequestValidator>();
+
+            services.AddControllers()
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>());
 
             services.AddSwaggerGen(c =>
             {
