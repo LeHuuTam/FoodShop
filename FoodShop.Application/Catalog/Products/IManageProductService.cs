@@ -1,4 +1,5 @@
-﻿using FoodShop.ViewModels.Catalog.Products;
+﻿using FoodShop.ViewModels.Catalog.ProductImages;
+using FoodShop.ViewModels.Catalog.Products;
 using FoodShop.ViewModels.Common;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -26,12 +27,14 @@ namespace FoodShop.Application.Catalog.Products
 
         Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagingRequest request);
 
-        Task<int> AddImages(int productId, List<IFormFile> files);
+        Task<int> AddImage(int productId, ProductImageCreateRequest request);
 
-        Task<int> RemoveImages(int imageId);
+        Task<int> RemoveImage(int imageId);
 
-        Task<int> UpdateImage(int imageId, string caption, bool isDefault);
+        Task<int> UpdateImage(int imageId, ProductImageUpdateRequest request);
 
-        Task<List<ProductImageViewModel>> GetListImage(int productId);
+        Task<ViewModels.Catalog.ProductImages.ProductImageViewModel> GetImageById(int imageId);
+
+        Task<List<ViewModels.Catalog.ProductImages.ProductImageViewModel>> GetListImage(int productId);
     }
 }
