@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using System.Net.Http.Headers;
 using System.IO;
+using FoodShop.ViewModels.Catalog.ProductImages;
 
 namespace FoodShop.Application.Catalog.Products
 {
@@ -25,9 +26,25 @@ namespace FoodShop.Application.Catalog.Products
             _context = context;
             _storageService = storageService;
         }
-        public Task<int> AddImages(int productId, List<IFormFile> files)
+        public async Task<int> AddImage(int productId, ProductImageCreateRequest request)
         {
-            throw new NotImplementedException();
+            var productImage = new ProductImage()
+            {
+                Caption = request.Caption,
+                DateCreated = DateTime.Now,
+                IsDefault = request.IsDefault,
+                ProductId = productId,
+                SortOrder = request.SortOrder
+            };
+
+            if (request.ImageFile != null)
+            {
+                productImage.ImagePath = await this.SaveFile(request.ImageFile);
+                productImage.FileSize = request.ImageFile.Length;
+            }
+            _context.ProductImages.Add(productImage);
+            await _context.SaveChangesAsync();
+            return productImage.Id;
         }
 
         public async Task AddViewcount(int productId)
@@ -141,7 +158,17 @@ namespace FoodShop.Application.Catalog.Products
             return productViewModel;
         }
 
-        public Task<List<ProductImageViewModel>> GetListImage(int productId)
+        public Task<ViewModels.Catalog.ProductImages.ProductImageViewModel> GetImageById(int imageId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<ViewModels.Catalog.ProductImages.ProductImageViewModel>> GetListImage(int productId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> RemoveImage(int imageId)
         {
             throw new NotImplementedException();
         }
@@ -172,6 +199,11 @@ namespace FoodShop.Application.Catalog.Products
         }
 
         public Task<int> UpdateImage(int imageId, string caption, bool isDefault)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> UpdateImage(int imageId, ProductImageUpdateRequest request)
         {
             throw new NotImplementedException();
         }
