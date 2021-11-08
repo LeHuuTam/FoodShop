@@ -38,6 +38,7 @@ namespace FoodShop.BackendApi
         {
             services.AddDbContext<FoodShopDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString(SystemConstants.MainConnectionString)));
+
             services.AddIdentity<AppUser, AppRole>()
                 .AddEntityFrameworkStores<FoodShopDbContext>()
                 .AddDefaultTokenProviders();
