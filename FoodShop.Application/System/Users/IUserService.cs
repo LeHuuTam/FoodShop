@@ -1,4 +1,5 @@
-﻿using FoodShop.ViewModels.System.Users;
+﻿using FoodShop.ViewModels.Common;
+using FoodShop.ViewModels.System.Users;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,5 +12,8 @@ namespace FoodShop.Application.System.Users
         Task<string> Authencate(LoginRequest request);
 
         Task<bool> Register(RegisterRequest request);
+
+        Task<PagedResult<UserVm>> GetUsersPaging(GetUserPagingRequest request);
     }
 }
+

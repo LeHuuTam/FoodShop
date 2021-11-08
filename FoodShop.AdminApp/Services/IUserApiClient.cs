@@ -1,4 +1,5 @@
-﻿using FoodShop.ViewModels.System.Users;
+﻿using FoodShop.ViewModels.Common;
+using FoodShop.ViewModels.System.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,7 @@ namespace FoodShop.AdminApp.Services
     public interface IUserApiClient
     {
         Task<string> Authenticate(LoginRequest request);
+
+        Task<PagedResult<UserVm>> GetUsersPagings(GetUserPagingRequest request);
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FoodShop.Application.Catalog.Products
 {
-    public interface IManageProductService
+    public interface IProductService
     {
         Task<int> Create(ProductCreateRequest request);
 
@@ -36,5 +36,9 @@ namespace FoodShop.Application.Catalog.Products
         Task<ViewModels.Catalog.ProductImages.ProductImageViewModel> GetImageById(int imageId);
 
         Task<List<ViewModels.Catalog.ProductImages.ProductImageViewModel>> GetListImage(int productId);
+
+        Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetPublicProductPagingRequest request);
+
+        Task<List<ProductViewModel>> GetAll();
     }
 }
