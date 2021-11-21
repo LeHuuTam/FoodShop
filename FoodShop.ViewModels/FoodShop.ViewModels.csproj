@@ -7,6 +7,11 @@
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="10.3.4" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FoodShop.Data\FoodShop.Data.csproj" />
   </ItemGroup>
 
 </Project>
