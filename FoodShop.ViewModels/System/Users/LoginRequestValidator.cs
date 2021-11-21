@@ -11,7 +11,7 @@ namespace FoodShop.ViewModels.System.Users
         {
             RuleFor(x => x.UserName).NotEmpty().WithMessage("User name is required");
             RuleFor(x => x.Password).NotEmpty().WithMessage("Password is required")
-                .MinimumLength(6).WithMessage("Password is at least 6 characters");
+                .MinimumLength(4).WithMessage("Password is at least 4 characters");
         }
     }
 }
