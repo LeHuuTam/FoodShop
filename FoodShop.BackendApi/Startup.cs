@@ -5,6 +5,7 @@ using FoodShop.Application.System.Users;
 using FoodShop.Data.EF;
 using FoodShop.Data.Entities;
 using FoodShop.Utilities.Constants;
+using FoodShop.ViewModels.System.Roles;
 using FoodShop.ViewModels.System.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -50,6 +51,7 @@ namespace FoodShop.BackendApi
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IRoleService, RoleService>();
 
             //services.AddTransient<IValidator<LoginRequest>, LoginRequestValidator>();
             //services.AddTransient<IValidator<RegisterRequest>, RegisterRequestValidator>();
