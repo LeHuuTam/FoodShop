@@ -23,10 +23,10 @@ namespace FoodShop.BackendApi.Controllers
             this._productService = productService;
         }
         //http://localhost:port/products?pageIndex=1&pageSize=10&CategoryId=
-        [HttpGet]
-        public async Task<IActionResult> GetAllPaging([FromQuery] GetPublicProductPagingRequest request)
+        [HttpGet("paging")]
+        public async Task<IActionResult> GetAllPaging([FromQuery] GetManageProductPagingRequest request)
         {
-            var products = await _productService.GetAllByCategoryId(request);
+            var products = await _productService.GetAllPaging(request);
             return Ok(products);
         }
         //http://localhost:port/product/1

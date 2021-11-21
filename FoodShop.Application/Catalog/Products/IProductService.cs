@@ -17,7 +17,7 @@ namespace FoodShop.Application.Catalog.Products
 
         Task<int> Delete(int productId);
 
-        Task<ProductViewModel> GetById(int productId);
+        Task<ProductVm> GetById(int productId);
 
         Task<bool> UpdatePrice(int productId, decimal newPrice);
 
@@ -25,7 +25,7 @@ namespace FoodShop.Application.Catalog.Products
 
         Task AddViewcount(int productId);
 
-        Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagingRequest request);
+        Task<PagedResult<ProductVm>> GetAllPaging(GetManageProductPagingRequest request);
 
         Task<int> AddImage(int productId, ProductImageCreateRequest request);
 
@@ -37,8 +37,8 @@ namespace FoodShop.Application.Catalog.Products
 
         Task<List<ViewModels.Catalog.ProductImages.ProductImageViewModel>> GetListImage(int productId);
 
-        Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetPublicProductPagingRequest request);
+        Task<PagedResult<ProductVm>> GetAllByCategoryId(GetPublicProductPagingRequest request);
 
-        Task<List<ProductViewModel>> GetAll();
+        Task<List<ProductVm>> GetAll();
     }
 }
