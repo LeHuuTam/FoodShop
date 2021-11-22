@@ -70,7 +70,7 @@ namespace FoodShop.AdminApp.Services
             var data = await GetAsync<PagedResult<ProductVm>>(
                 $"/api/products/paging?pageIndex={request.PageIndex}" +
                 $"&pageSize={request.PageSize}" +
-                $"&keyword={request.Keyword}");  //&languageId={request.LanguageId}");
+                $"&keyword={request.Keyword}&categoryId={request.CategoryId}");  //&languageId={request.LanguageId}");
 
             return data;
         }
