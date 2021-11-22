@@ -1,4 +1,5 @@
 using FluentValidation.AspNetCore;
+using FoodShop.Application.Catalog.Categories;
 using FoodShop.Application.Catalog.Products;
 using FoodShop.Application.Common;
 using FoodShop.Application.System.Users;
@@ -52,6 +53,7 @@ namespace FoodShop.BackendApi
 
             services.AddTransient<IStorageService, FileStorageService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
