@@ -38,6 +38,7 @@ namespace FoodShop.Application.Catalog.Products
         Task<List<ViewModels.Catalog.ProductImages.ProductImageViewModel>> GetListImage(int productId);
 
         Task<PagedResult<ProductVm>> GetAllByCategoryId(GetPublicProductPagingRequest request);
+        Task<ApiResult<bool>> CategoryAssign(int id, CategoryAssignRequest request);
 
         Task<List<ProductVm>> GetAll();
     }
