@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodShop.ViewModels.Catalog.Categories;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -15,5 +16,6 @@ namespace FoodShop.ViewModels.Catalog.Products
 
         public string Name { set; get; }
         public string Description { set; get; }
+        public List<string> Categories { get; set; } = new List<string>();
     }
 }
